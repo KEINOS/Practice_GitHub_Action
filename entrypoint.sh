@@ -3,7 +3,9 @@
 echo "Hello $1"
 time=$(date)
 echo "::set-output name=time::$time"
-echo 'Env data are are:'
+echo "SUPER_SECRET: ${MY_SECRET_VALUE:-not found}"
+echo "SUPER_SECRETS: ${MY_SECRET_VALUE:-not found}"
+echo 'Env data in entrypoint are:'
 env
-echo "SUPER_SECRET: ${super_secret:-not found}"
-echo "SUPER_SECRETS: ${super_secrets:-not found}"
+echo 'Arg data are:'
+echo "$@"
