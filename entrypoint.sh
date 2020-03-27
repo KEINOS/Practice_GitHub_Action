@@ -10,9 +10,11 @@ echo 'Arg data are:'
 echo "$@"
 echo 'Current Dir Structure:'
 ls -la
+echo 'Tree:'
+tree -d /
 echo 'Current Path:'
 pwd
 echo 'PHP info (from entrypoint):'
 php -i
 echo 'Run script:'
-php /app/action.php $@
+php /app/action.php "$@"

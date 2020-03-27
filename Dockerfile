@@ -9,6 +9,7 @@ RUN \
     apk --no-cache add \
         # Required for PHP Composer in order to download the packages
         git \
+        tree \
     # Download PHP Composer
     && /app/install-bin-composer.sh \
     # Install composer packages of the PHP script's dependencies
