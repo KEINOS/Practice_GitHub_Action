@@ -1,0 +1,6 @@
+{
+    "name": "sample/action",
+    "require": {
+        "rivsen/hello-world": "dev-master"
+    }
+}
