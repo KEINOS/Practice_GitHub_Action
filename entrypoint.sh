@@ -20,4 +20,4 @@ git clone $url_repo_git
 
 php /app/action.php "$@"
 
-ls -la "${GITHUB_REPOSITORY}"
+ls -la "${GITHUB_WORKSPACE}"
