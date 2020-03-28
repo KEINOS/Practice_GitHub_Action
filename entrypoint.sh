@@ -13,9 +13,10 @@
     exit 1
 }
 
+cd $GITHUB_WORKSPACE
 $url_repo_git="https://github.com/${GITHUB_REPOSITORY}.git"
 echo "Cloning: ${url_repo_git}"
-git clone $url_repo_git $GITHUB_WORKSPACE
+git clone $url_repo_git
 
 php /app/action.php "$@"
 
