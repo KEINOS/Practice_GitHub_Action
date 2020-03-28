@@ -16,8 +16,8 @@
 cd $GITHUB_WORKSPACE
 url_repo_git="https://github.com/${GITHUB_REPOSITORY}.git"
 echo "Cloning: ${url_repo_git}"
-git clone $url_repo_git
+git clone $url_repo_git $GITHUB_WORKSPACE
 
 php /app/action.php "$@"
 
-ls -la "${GITHUB_WORKSPACE}"
+tree $GITHUB_WORKSPACE
