@@ -14,8 +14,9 @@ if (empty(trim($_ENV['MY_SECRET_VALUE']))) {
 $token_access=$_ENV['MY_SECRET_VALUE'];
 $token_sample='2283551024dc52f714d1eeede01d7274883947fc';
 define('LEN_TOKEN_EXPECT', strlen($token_sample));
-if (strlen($token_access) === LEN_TOKEN_EXPECT) {
-    throw new RuntimeException('Invalid ENV value of "MY_SECRET_VALUE". Token length must be: ' . LEN_TOKEN_EXPECT);
+if (strlen($token_access) !== LEN_TOKEN_EXPECT) {
+    $msg = 'Invalid ENV value of "MY_SECRET_VALUE". Token length must be: ' . LEN_TOKEN_EXPECT . ' Len given: ' . strlen($token_access);
+    throw new RuntimeException();
     exit(1);
 }
 if (ctype_xdigit($token_access) === false){
