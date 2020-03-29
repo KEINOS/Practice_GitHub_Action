@@ -13,11 +13,12 @@
     exit 1
 }
 
-cd $GITHUB_WORKSPACE
+# Cloning target repository
 url_repo_git="https://github.com/${GITHUB_REPOSITORY}.git"
-echo "Cloning: ${url_repo_git}"
+echo "Git URL of your repo to clone: ${url_repo_git}"
 git clone $url_repo_git $GITHUB_WORKSPACE
-
-php /app/action.php "$@"
-
+echo 'Directory structure of your repo:'
 tree $GITHUB_WORKSPACE
+
+cd $GITHUB_WORKSPACE
+php /app/action.php "$@"
